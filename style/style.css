@@ -50,7 +50,8 @@ header {
       align-items: center;
       padding: 0 15px;
       font-size: 20px;
-      text-decoration: none; }
+      text-decoration: none;
+      color: black; }
     header nav > a:hover {
       border-bottom: 2px solid #aa00ff; }
     header nav > a:visited {
