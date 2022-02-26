@@ -1,0 +1,822 @@
+@font-face {
+    font-family: 'rubik-font-titles';
+    src: url('../fonts/Rubik-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'rubik-font-text';
+    src: url('../fonts/Rubik-Light.ttf');
+}
+
+$backgroundColor: #f5f5f5;
+$fontColor: white;
+$sectionColor: white;
+$titleColorBackground: #aa00ff;
+$titleColorText: rgba(255, 255, 255, 0.95);
+;
+
+// цвет фона секций, тени
+%backgroundSections{
+    background-color: $sectionColor;
+    box-shadow: 0 0 10px rgb(197, 197, 197);
+}
+
+// Цвет шрифта, цвет фона заголовков в "карточках"
+%colorTitles{
+    background-color: $titleColorBackground;
+    color: $titleColorText;
+    padding: 10px;
+    font-family: 'rubik-font-titles';
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'rubik-font-text';
+    word-spacing: 4px;
+    line-height: 1.4;
+}
+
+body{
+    background-color: $backgroundColor;
+}
+
+.main_container{
+    max-width: 1200px;
+    min-height: 100%;
+    margin: 0 auto;   
+}
+
+h2{
+    color: #aa00ff;
+    font-size: 28px;
+}
+
+header{
+    height: 40px;
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: end;
+    
+    .burger_view{
+        display: none;
+    }
+
+    nav{
+        width: 100%;
+        display: flex;
+        justify-content: right;
+
+
+        & *{
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        >a:hover{
+            border-bottom: 2px solid #aa00ff;
+        }
+
+        >a:visited{
+            color: black;
+        }
+
+        @media (max-width: 840px) {
+            & *{
+                font-size: 14px;
+            }
+        }
+    }
+
+    @media (max-width: 610px) {
+        nav{
+            >a{
+                display: none;
+            }
+
+            .burger_view{
+                display: flex;
+                flex-direction: column;
+                z-index: 100;
+                height: 100%;
+                width: 100%;
+                list-style: none;
+
+                summary{
+                    font-size: 30px;
+                }
+                
+                .links_details{
+                    padding: 15px;
+                    min-height: 100%;
+                    max-width: 100%;
+                    color: black;
+                    display: flex;
+                    flex-direction: column;
+    
+                    background-color: white;
+                    box-shadow: 0 0 10px rgb(197, 197, 197);
+    
+                    a{
+                        display: flex;
+                        text-align: left;
+                        padding: 10px 15px;
+                        font-size: 26px;
+                        text-decoration: none;
+
+                        &:hover{
+                            border-bottom: 2px solid #aa00ff;
+                        }
+
+                        &:visited{
+                            color: black;
+                        }
+                    }
+                }   
+            }
+        }
+    }
+}
+
+main{
+    height: 100%;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.main_information{
+    max-height: 400px;
+    width: 95%;
+    margin: auto auto;
+    display: flex;
+    justify-content: space-between;
+    
+    flex-direction: row;
+    position: relative;
+
+    @extend %backgroundSections;
+
+    .block_for_photo{
+        max-height: 100%;
+        width: 35%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .wrap_for_img{
+            width: 100%;
+            height: 100%;
+            align-self: flex-start;
+            
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: fill;
+                
+            }
+        } 
+    }
+
+    .hello_page{
+        height: 100%;
+        width: 65%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+
+        .My_name_and_positon{
+            height: 30%;
+            width: 100%;
+
+            .my_name{
+                margin: 0 30px;
+                font-size: 30px;
+            }
+
+            .my_position{
+                margin: 0 30px;
+                font-size: 20px;
+            }
+
+            @media (max-width: 800px) {
+                .my_name{
+                    font-size: 22px;
+                }
+                
+                .my_position{
+                    font-size: 16px;
+                }
+            }
+        }
+        
+        .my_location{
+            height: 50%;
+            max-width: 100%;
+
+            display: flex;
+            flex-direction: row;
+            margin: 0 20px;
+            box-sizing: border-box;
+
+            .points{
+                width: 15%;
+            }
+
+            .info_by_point{
+                width: 60%;
+            }
+
+            .points, .info_by_point{
+                list-style: none;
+                margin-left: 10px;
+                
+
+                li{
+                    margin: 10px 5px;
+                    font-size: 18px;
+                }
+
+                @media (max-width: 800px) {
+                    li{
+                        font-size: 14px;
+                        margin: 5px;
+                    }
+                    
+                }
+            }
+
+            @media (max-width: 800px) {
+                .points{
+                    align-self: center;
+                }
+    
+                .info_by_point{
+                    align-self: center;
+                }
+                
+            }
+
+
+            .links{
+                list-style: none;
+                width: 10%;
+                height: 80%;
+                align-self: center;
+
+                li{
+                    display: block;
+                    height: 33%;
+                    max-width: 100%;
+                    position: relative;
+
+                    a{
+                        height: 100%;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        img{
+                            object-fit: contain;
+                            height: 80%;
+                        }
+                    }
+
+                    a:hover{
+                        position: absolute;
+                        top: -3px;
+                        left: -3px;
+                    }
+
+                    @media (max-width: 800px) {
+                        li{
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+            @media (max-width: 800px) {
+                .links{
+                    height: 80%;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 800px) {
+         *{
+             font-size: 100%;
+         }
+    }
+}
+
+@media (max-width: 550px){
+    .main_information{
+        max-height: 500px;
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        position: relative;
+        background-color: none;
+        overflow: hidden;
+
+        .block_for_photo{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+
+            .wrap_for_img{
+                img{
+                    display: block;
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover; 
+                }
+            } 
+        }
+
+        .hello_page{
+            height: 60%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            justify-content: space-between;
+            position: absolute;
+            top: 40%;
+            
+
+            .My_name_and_positon{
+                height: 35%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+                font-weight: 800;
+                color: #aa00ff;
+                background-color: rgba(255, 255, 255, 1);
+
+                .my_name{
+                    margin: 0 30px;
+                    font-size: 22px;
+                }
+
+                .my_position{
+                    margin: 0 30px;
+                    font-size: 18px;
+                }
+            }
+            
+            .my_location{
+                height: 60%;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                box-sizing: border-box;
+                margin: 0;
+                color: #aa00ff;
+                font-weight: 600;
+                background-color: rgba(255, 255, 255, 0.8);
+
+                .points{
+                    width: 15%;
+                }
+
+                .info_by_point{
+                    width: 60%;
+                }
+
+                .points, .info_by_point{
+                    list-style: none;
+                    margin-left: 10px;
+
+                    li{
+                        margin: 10px 5px;
+                        font-size: 14px;
+                    }
+                }
+
+                .links{
+                    list-style: none;
+                    width: 25%;
+                    height: 80%;
+                    align-self: center;
+
+                    li{
+                        display: block;
+                        height: 33%;
+                        max-width: 100%;
+
+                        a{
+                            height: 100%;
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            img{
+                                object-fit: contain;
+                                height: 80%;
+                            }
+                        }
+                    }
+                }   
+            }
+        }
+    }
+}
+
+.my_point{
+    min-height: 150px;
+    width: 95%;
+    margin: 50px auto 0 auto;
+
+    @extend %backgroundSections;
+
+    >h2{
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    .wrap_my_point{
+        height: 100%;
+        max-width: 100%;
+        margin: 20px;
+        font-size: 20px;
+    }
+}
+
+
+.about_me{
+    min-height: 400px;
+    width: 95%;
+    margin: 25px auto 0 auto;
+
+    >h2{
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    .wrap_about_me{
+        padding: 20px;
+        display: flex;
+        justify-content: space-around;
+
+        .where_knowledge{
+            width: 40%;
+            padding: 20px;
+
+            @extend %backgroundSections;
+        }
+
+        .my_quality{
+            width: 40%;
+            padding: 10px;
+            @extend %backgroundSections;
+
+            ul{
+                list-style: none;
+                
+                *{
+                    margin: 4px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 840px) {
+        .wrap_about_me{
+            flex-direction: column;
+            justify-content: space-around;
+            
+
+            .where_knowledge, .my_quality{
+                width: 100%;
+                box-sizing: border-box;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    @media (max-width: 550px) {
+        .wrap_about_me{
+            padding: 0;
+        }
+    }
+}
+
+.skills{
+    min-height: 305px;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 25px;
+    padding-bottom: 20px;
+
+    @extend %backgroundSections;
+
+    & > h2{
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .list_skills{
+
+        h4{
+            padding: 5px 15px;
+            text-align: center;
+            font-size: 20px;
+            @extend %colorTitles;
+        }
+
+        & > ul{
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+
+            ul{
+                margin-top: 10px;
+                padding: 5px 0;
+
+                li{
+                    margin-top: 5px;
+                    margin-left: 25px;
+                    padding-right: 10px;
+  
+                }
+            }
+        } 
+        
+        @media (max-width: 840px) {
+            ul {
+                display: flex;
+                justify-content: space-around;
+                flex-direction: row;
+                flex-wrap: wrap;
+                
+                li{
+                    margin: 5px 10px;
+                }
+            }
+        }
+    }
+}
+
+@mixin card_education($posX, $posY) {
+    .date_education{
+        position: absolute;
+        top: $posX;
+        left: $posY;
+        @extend %colorTitles;
+    }
+
+    .description{
+        padding: 40px 0 0 15px;
+
+        .title{
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        @media (max-width: 1030px) {
+            .title{
+                font-size: 16px;
+            }
+
+            .body{
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 840px) {
+            .title{
+                font-size: 20px;
+            }
+
+            .body{
+                font-size: 16px;
+            }
+        }
+
+    }
+}
+    
+
+.education{
+    min-height: 100%;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 25px;
+
+    > h2{
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    .wrap_education{
+        min-height: 250px;
+        width: 100%;
+        position: relative;
+
+        .school, .student_time, .itacademy_time{
+            position: absolute;
+            width: 30%;
+            min-height: 140px;
+            @extend %backgroundSections;
+            @include card_education(-10px, 15px);
+        }
+
+        .school{
+            left: 20px;
+        } 
+
+        .student_time{
+            left: 50%;
+            transform: translate(-50%, 70%);
+        }
+
+        .itacademy_time{
+            right: 20px;
+        }
+
+        @media (max-width: 840px) {
+            .school, .itacademy_time{
+                width: 45%;
+            }
+            .student_time{
+                width: 45%;
+                transform: translate(-50%, 150%);
+            }
+        }
+    }
+}
+
+@media (max-width: 840px) {
+    .education{
+        min-height: 450px;
+    }
+}
+
+@media (max-width: 550px){
+    .education{
+        min-height: 100%;
+        width: 95%;
+        margin: 0 auto;
+        margin-top: 25px;
+    
+        > h2{
+            text-align: center;
+            margin: 15px 0;
+        }
+    
+        .wrap_education{
+            min-height: 250px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+    
+            .school, .student_time, .itacademy_time{
+                position: relative;
+                width: 100%;
+                box-sizing: border-box;
+                min-height: 140px;
+                margin: 20px 0;
+
+            }
+    
+            .school{
+                left: 0;
+            } 
+    
+            .student_time{
+                transform: none;
+                left: 0;
+            }
+    
+            .itacademy_time{
+                right: 0;
+            }
+        }
+    }
+}
+
+
+
+@mixin title_body_experience() {
+    .title{
+        @extend %colorTitles;
+        padding: 10px;
+        display: inline;
+        position: absolute;
+        top: -10px;
+        left: 15px;
+    }
+
+    .body{
+
+        position: relative;
+        top: 25px;
+        margin: 15px;
+        padding-bottom: 20px;
+        
+    }
+}
+
+.experience_work{
+    min-height: 600px;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 25px;
+
+    > h2{
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    .wrap_experience{
+        min-height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .my_course, .my_current_work, .my_diploma_work{
+            width: 60%;
+            min-height: 30%;
+            position: relative;
+
+            @extend %backgroundSections;
+            @include title_body_experience;
+        }
+
+        .my_current_work{
+            margin: 20px 0 30px 20px;
+            align-self: left;
+ 
+        }
+
+        .my_course{
+            margin: 20px 20px 30px 20px;
+            align-self: flex-end;
+        }
+
+        .my_diploma_work{
+            margin: 20px 20px 0 20px;
+            align-self: left;
+
+        }
+
+        @media (max-width: 840px) {
+           .my_course, .my_current_work, .my_diploma_work{
+                width: 100%;
+                box-sizing: border-box;
+                align-self: center;
+                margin: 20px;
+            }
+        }
+        
+    }  
+}
+
+
+.facts_about_me{
+    min-height: 100px;
+    width: 95%;
+    margin: 50px auto 0 auto;
+
+    > h2{
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    @extend %backgroundSections;
+
+    .wrap_facts_about_me{
+        max-width: 100%;
+        height: 100%;
+        margin: 15px;
+    }
+}
+
+footer{
+    height: 70px;
+    width: 100%;
+}

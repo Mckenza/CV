@@ -1,0 +1,510 @@
+@font-face {
+  font-family: 'rubik-font-titles';
+  src: url("../fonts/Rubik-Medium.ttf"); }
+@font-face {
+  font-family: 'rubik-font-text';
+  src: url("../fonts/Rubik-Light.ttf"); }
+.main_information, .my_point, .about_me .wrap_about_me .where_knowledge, .about_me .wrap_about_me .my_quality, .skills, .education .wrap_education .school, .education .wrap_education .student_time, .education .wrap_education .itacademy_time, .experience_work .wrap_experience .my_course, .experience_work .wrap_experience .my_current_work, .experience_work .wrap_experience .my_diploma_work, .facts_about_me {
+  background-color: white;
+  box-shadow: 0 0 10px #c5c5c5; }
+
+.skills .list_skills h4, .education .wrap_education .school .date_education, .education .wrap_education .student_time .date_education, .education .wrap_education .itacademy_time .date_education, .experience_work .wrap_experience .my_course .title, .experience_work .wrap_experience .my_current_work .title, .experience_work .wrap_experience .my_diploma_work .title {
+  background-color: #aa00ff;
+  color: rgba(255, 255, 255, 0.95);
+  padding: 10px;
+  font-family: 'rubik-font-titles'; }
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'rubik-font-text';
+  word-spacing: 4px;
+  line-height: 1.4; }
+
+body {
+  background-color: #f5f5f5; }
+
+.main_container {
+  max-width: 1200px;
+  min-height: 100%;
+  margin: 0 auto; }
+
+h2 {
+  color: #aa00ff;
+  font-size: 28px; }
+
+header {
+  height: 40px;
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  justify-content: end; }
+  header .burger_view {
+    display: none; }
+  header nav {
+    width: 100%;
+    display: flex;
+    justify-content: right; }
+    header nav * {
+      display: flex;
+      align-items: center;
+      padding: 0 15px;
+      font-size: 20px;
+      text-decoration: none; }
+    header nav > a:hover {
+      border-bottom: 2px solid #aa00ff; }
+    header nav > a:visited {
+      color: black; }
+    @media (max-width: 840px) {
+      header nav * {
+        font-size: 14px; } }
+  @media (max-width: 610px) {
+    header nav > a {
+      display: none; }
+    header nav .burger_view {
+      display: flex;
+      flex-direction: column;
+      z-index: 100;
+      height: 100%;
+      width: 100%;
+      list-style: none; }
+      header nav .burger_view summary {
+        font-size: 30px; }
+      header nav .burger_view .links_details {
+        padding: 15px;
+        min-height: 100%;
+        max-width: 100%;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        box-shadow: 0 0 10px #c5c5c5; }
+        header nav .burger_view .links_details a {
+          display: flex;
+          text-align: left;
+          padding: 10px 15px;
+          font-size: 26px;
+          text-decoration: none; }
+          header nav .burger_view .links_details a:hover {
+            border-bottom: 2px solid #aa00ff; }
+          header nav .burger_view .links_details a:visited {
+            color: black; } }
+
+main {
+  height: 100%;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column; }
+
+.main_information {
+  max-height: 400px;
+  width: 95%;
+  margin: auto auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  position: relative; }
+  .main_information .block_for_photo {
+    max-height: 100%;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .main_information .block_for_photo .wrap_for_img {
+      width: 100%;
+      height: 100%;
+      align-self: flex-start; }
+      .main_information .block_for_photo .wrap_for_img img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill; }
+  .main_information .hello_page {
+    height: 100%;
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    right: 0; }
+    .main_information .hello_page .My_name_and_positon {
+      height: 30%;
+      width: 100%; }
+      .main_information .hello_page .My_name_and_positon .my_name {
+        margin: 0 30px;
+        font-size: 30px; }
+      .main_information .hello_page .My_name_and_positon .my_position {
+        margin: 0 30px;
+        font-size: 20px; }
+      @media (max-width: 800px) {
+        .main_information .hello_page .My_name_and_positon .my_name {
+          font-size: 22px; }
+        .main_information .hello_page .My_name_and_positon .my_position {
+          font-size: 16px; } }
+    .main_information .hello_page .my_location {
+      height: 50%;
+      max-width: 100%;
+      display: flex;
+      flex-direction: row;
+      margin: 0 20px;
+      box-sizing: border-box; }
+      .main_information .hello_page .my_location .points {
+        width: 15%; }
+      .main_information .hello_page .my_location .info_by_point {
+        width: 60%; }
+      .main_information .hello_page .my_location .points, .main_information .hello_page .my_location .info_by_point {
+        list-style: none;
+        margin-left: 10px; }
+        .main_information .hello_page .my_location .points li, .main_information .hello_page .my_location .info_by_point li {
+          margin: 10px 5px;
+          font-size: 18px; }
+        @media (max-width: 800px) {
+          .main_information .hello_page .my_location .points li, .main_information .hello_page .my_location .info_by_point li {
+            font-size: 14px;
+            margin: 5px; } }
+      @media (max-width: 800px) {
+        .main_information .hello_page .my_location .points {
+          align-self: center; }
+        .main_information .hello_page .my_location .info_by_point {
+          align-self: center; } }
+      .main_information .hello_page .my_location .links {
+        list-style: none;
+        width: 10%;
+        height: 80%;
+        align-self: center; }
+        .main_information .hello_page .my_location .links li {
+          display: block;
+          height: 33%;
+          max-width: 100%;
+          position: relative; }
+          .main_information .hello_page .my_location .links li a {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+            .main_information .hello_page .my_location .links li a img {
+              object-fit: contain;
+              height: 80%; }
+          .main_information .hello_page .my_location .links li a:hover {
+            position: absolute;
+            top: -3px;
+            left: -3px; }
+          @media (max-width: 800px) {
+            .main_information .hello_page .my_location .links li li {
+              font-size: 12px; } }
+      @media (max-width: 800px) {
+        .main_information .hello_page .my_location .links {
+          height: 80%; } }
+  @media (max-width: 800px) {
+    .main_information * {
+      font-size: 100%; } }
+
+@media (max-width: 550px) {
+  .main_information {
+    max-height: 500px;
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    position: relative;
+    background-color: none;
+    overflow: hidden; }
+    .main_information .block_for_photo {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .main_information .block_for_photo .wrap_for_img img {
+        display: block;
+        height: 100%;
+        width: 100%;
+        object-fit: cover; }
+    .main_information .hello_page {
+      height: 60%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      justify-content: space-between;
+      position: absolute;
+      top: 40%; }
+      .main_information .hello_page .My_name_and_positon {
+        height: 35%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        font-weight: 800;
+        color: #aa00ff;
+        background-color: white; }
+        .main_information .hello_page .My_name_and_positon .my_name {
+          margin: 0 30px;
+          font-size: 22px; }
+        .main_information .hello_page .My_name_and_positon .my_position {
+          margin: 0 30px;
+          font-size: 18px; }
+      .main_information .hello_page .my_location {
+        height: 60%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        box-sizing: border-box;
+        margin: 0;
+        color: #aa00ff;
+        font-weight: 600;
+        background-color: rgba(255, 255, 255, 0.8); }
+        .main_information .hello_page .my_location .points {
+          width: 15%; }
+        .main_information .hello_page .my_location .info_by_point {
+          width: 60%; }
+        .main_information .hello_page .my_location .points, .main_information .hello_page .my_location .info_by_point {
+          list-style: none;
+          margin-left: 10px; }
+          .main_information .hello_page .my_location .points li, .main_information .hello_page .my_location .info_by_point li {
+            margin: 10px 5px;
+            font-size: 14px; }
+        .main_information .hello_page .my_location .links {
+          list-style: none;
+          width: 25%;
+          height: 80%;
+          align-self: center; }
+          .main_information .hello_page .my_location .links li {
+            display: block;
+            height: 33%;
+            max-width: 100%; }
+            .main_information .hello_page .my_location .links li a {
+              height: 100%;
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center; }
+              .main_information .hello_page .my_location .links li a img {
+                object-fit: contain;
+                height: 80%; } }
+.my_point {
+  min-height: 150px;
+  width: 95%;
+  margin: 50px auto 0 auto; }
+  .my_point > h2 {
+    text-align: center;
+    margin: 15px 0; }
+  .my_point .wrap_my_point {
+    height: 100%;
+    max-width: 100%;
+    margin: 20px;
+    font-size: 20px; }
+
+.about_me {
+  min-height: 400px;
+  width: 95%;
+  margin: 25px auto 0 auto; }
+  .about_me > h2 {
+    text-align: center;
+    margin: 15px 0; }
+  .about_me .wrap_about_me {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around; }
+    .about_me .wrap_about_me .where_knowledge {
+      width: 40%;
+      padding: 20px; }
+    .about_me .wrap_about_me .my_quality {
+      width: 40%;
+      padding: 10px; }
+      .about_me .wrap_about_me .my_quality ul {
+        list-style: none; }
+        .about_me .wrap_about_me .my_quality ul * {
+          margin: 4px; }
+  @media (max-width: 840px) {
+    .about_me .wrap_about_me {
+      flex-direction: column;
+      justify-content: space-around; }
+      .about_me .wrap_about_me .where_knowledge, .about_me .wrap_about_me .my_quality {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 20px; } }
+  @media (max-width: 550px) {
+    .about_me .wrap_about_me {
+      padding: 0; } }
+
+.skills {
+  min-height: 305px;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 25px;
+  padding-bottom: 20px; }
+  .skills > h2 {
+    margin: 15px 0;
+    text-align: center; }
+  .skills .list_skills h4 {
+    padding: 5px 15px;
+    text-align: center;
+    font-size: 20px; }
+  .skills .list_skills > ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none; }
+    .skills .list_skills > ul ul {
+      margin-top: 10px;
+      padding: 5px 0; }
+      .skills .list_skills > ul ul li {
+        margin-top: 5px;
+        margin-left: 25px;
+        padding-right: 10px; }
+  @media (max-width: 840px) {
+    .skills .list_skills ul {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: row;
+      flex-wrap: wrap; }
+      .skills .list_skills ul li {
+        margin: 5px 10px; } }
+
+.education {
+  min-height: 100%;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 25px; }
+  .education > h2 {
+    text-align: center;
+    margin: 15px 0; }
+  .education .wrap_education {
+    min-height: 250px;
+    width: 100%;
+    position: relative; }
+    .education .wrap_education .school, .education .wrap_education .student_time, .education .wrap_education .itacademy_time {
+      position: absolute;
+      width: 30%;
+      min-height: 140px; }
+      .education .wrap_education .school .date_education, .education .wrap_education .student_time .date_education, .education .wrap_education .itacademy_time .date_education {
+        position: absolute;
+        top: -10px;
+        left: 15px; }
+      .education .wrap_education .school .description, .education .wrap_education .student_time .description, .education .wrap_education .itacademy_time .description {
+        padding: 40px 0 0 15px; }
+        .education .wrap_education .school .description .title, .education .wrap_education .student_time .description .title, .education .wrap_education .itacademy_time .description .title {
+          margin-bottom: 10px;
+          font-size: 20px; }
+        @media (max-width: 1030px) {
+          .education .wrap_education .school .description .title, .education .wrap_education .student_time .description .title, .education .wrap_education .itacademy_time .description .title {
+            font-size: 16px; }
+          .education .wrap_education .school .description .body, .education .wrap_education .student_time .description .body, .education .wrap_education .itacademy_time .description .body {
+            font-size: 14px; } }
+        @media (max-width: 840px) {
+          .education .wrap_education .school .description .title, .education .wrap_education .student_time .description .title, .education .wrap_education .itacademy_time .description .title {
+            font-size: 20px; }
+          .education .wrap_education .school .description .body, .education .wrap_education .student_time .description .body, .education .wrap_education .itacademy_time .description .body {
+            font-size: 16px; } }
+    .education .wrap_education .school {
+      left: 20px; }
+    .education .wrap_education .student_time {
+      left: 50%;
+      transform: translate(-50%, 70%); }
+    .education .wrap_education .itacademy_time {
+      right: 20px; }
+    @media (max-width: 840px) {
+      .education .wrap_education .school, .education .wrap_education .itacademy_time {
+        width: 45%; }
+      .education .wrap_education .student_time {
+        width: 45%;
+        transform: translate(-50%, 150%); } }
+
+@media (max-width: 840px) {
+  .education {
+    min-height: 450px; } }
+@media (max-width: 550px) {
+  .education {
+    min-height: 100%;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 25px; }
+    .education > h2 {
+      text-align: center;
+      margin: 15px 0; }
+    .education .wrap_education {
+      min-height: 250px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column; }
+      .education .wrap_education .school, .education .wrap_education .student_time, .education .wrap_education .itacademy_time {
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
+        min-height: 140px;
+        margin: 20px 0; }
+      .education .wrap_education .school {
+        left: 0; }
+      .education .wrap_education .student_time {
+        transform: none;
+        left: 0; }
+      .education .wrap_education .itacademy_time {
+        right: 0; } }
+.experience_work {
+  min-height: 600px;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 25px; }
+  .experience_work > h2 {
+    text-align: center;
+    margin: 15px 0; }
+  .experience_work .wrap_experience {
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column; }
+    .experience_work .wrap_experience .my_course, .experience_work .wrap_experience .my_current_work, .experience_work .wrap_experience .my_diploma_work {
+      width: 60%;
+      min-height: 30%;
+      position: relative; }
+      .experience_work .wrap_experience .my_course .title, .experience_work .wrap_experience .my_current_work .title, .experience_work .wrap_experience .my_diploma_work .title {
+        padding: 10px;
+        display: inline;
+        position: absolute;
+        top: -10px;
+        left: 15px; }
+      .experience_work .wrap_experience .my_course .body, .experience_work .wrap_experience .my_current_work .body, .experience_work .wrap_experience .my_diploma_work .body {
+        position: relative;
+        top: 25px;
+        margin: 15px;
+        padding-bottom: 20px; }
+    .experience_work .wrap_experience .my_current_work {
+      margin: 20px 0 30px 20px;
+      align-self: left; }
+    .experience_work .wrap_experience .my_course {
+      margin: 20px 20px 30px 20px;
+      align-self: flex-end; }
+    .experience_work .wrap_experience .my_diploma_work {
+      margin: 20px 20px 0 20px;
+      align-self: left; }
+    @media (max-width: 840px) {
+      .experience_work .wrap_experience .my_course, .experience_work .wrap_experience .my_current_work, .experience_work .wrap_experience .my_diploma_work {
+        width: 100%;
+        box-sizing: border-box;
+        align-self: center;
+        margin: 20px; } }
+
+.facts_about_me {
+  min-height: 100px;
+  width: 95%;
+  margin: 50px auto 0 auto; }
+  .facts_about_me > h2 {
+    text-align: center;
+    margin: 15px 0; }
+  .facts_about_me .wrap_facts_about_me {
+    max-width: 100%;
+    height: 100%;
+    margin: 15px; }
+
+footer {
+  height: 70px;
+  width: 100%; }
+
+/*# sourceMappingURL=style.css.map */
